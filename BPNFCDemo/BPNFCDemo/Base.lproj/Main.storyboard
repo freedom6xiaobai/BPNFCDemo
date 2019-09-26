@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BPNFCDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0p-WX-kLT">
+                                <rect key="frame" x="20" y="783" width="374" height="61"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="Yvp-ja-FtV"/>
+                                </constraints>
+                                <state key="normal" title="Scan"/>
+                                <connections>
+                                    <action selector="scanPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ffj-az-MaD"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ahd-K2-Cu8">
+                                <rect key="frame" x="20" y="92" width="374" height="226"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="226" id="2ru-Lp-kcS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GB8-IA-f3o">
+                                <rect key="frame" x="20" y="326" width="374" height="239"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="239" id="0rw-Qj-RXu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzr-QS-ADk">
+                                <rect key="frame" x="20" y="704" width="374" height="55"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="bNW-8t-WnV"/>
+                                </constraints>
+                                <state key="normal" title="添加钱包卡片"/>
+                                <connections>
+                                    <action selector="addWalletBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XvF-mp-HWh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GB8-IA-f3o" firstAttribute="trailing" secondItem="bzr-QS-ADk" secondAttribute="trailing" id="5e7-0x-kcm"/>
+                            <constraint firstItem="bzr-QS-ADk" firstAttribute="leading" secondItem="z0p-WX-kLT" secondAttribute="leading" id="GHC-Nk-h2L"/>
+                            <constraint firstItem="Ahd-K2-Cu8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="I2g-9a-YNp"/>
+                            <constraint firstItem="Ahd-K2-Cu8" firstAttribute="leading" secondItem="GB8-IA-f3o" secondAttribute="leading" id="SZg-oP-1Ax"/>
+                            <constraint firstItem="GB8-IA-f3o" firstAttribute="top" secondItem="Ahd-K2-Cu8" secondAttribute="bottom" constant="8" id="XaR-nP-ERt"/>
+                            <constraint firstItem="bzr-QS-ADk" firstAttribute="trailing" secondItem="z0p-WX-kLT" secondAttribute="trailing" id="cLu-g6-lXr"/>
+                            <constraint firstItem="z0p-WX-kLT" firstAttribute="top" secondItem="bzr-QS-ADk" secondAttribute="bottom" constant="24" id="egs-6Y-Koz"/>
+                            <constraint firstItem="GB8-IA-f3o" firstAttribute="leading" secondItem="bzr-QS-ADk" secondAttribute="leading" id="fBX-q8-PBF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z0p-WX-kLT" secondAttribute="bottom" constant="18" id="n7C-Zu-Y3N"/>
+                            <constraint firstItem="Ahd-K2-Cu8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="q5e-3w-k3X"/>
+                            <constraint firstItem="Ahd-K2-Cu8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="uWX-w6-ixa"/>
+                            <constraint firstItem="Ahd-K2-Cu8" firstAttribute="trailing" secondItem="GB8-IA-f3o" secondAttribute="trailing" id="vTn-gG-3RM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="Ahd-K2-Cu8" id="8p9-Zq-jkh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="104.46428571428571"/>
+        </scene>
+    </scenes>
+</document>

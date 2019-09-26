@@ -1,0 +1,124 @@
+{
+  "formatVersion" : 1,
+  "passTypeIdentifier" : "pass.com.meilishuo.higirl",
+  "serialNumber" : "nmyuxofgna",
+  "teamIdentifier" : "JEML7X75SB",
+  "webServiceURL" : "https://example.com/passes/",
+  "authenticationToken" : "vxwxd7J8AlNNFPS8k0a0FfUFtq0ewzFdc",
+  "relevantDate" : "2011-12-08T13:00-08:00",
+  "associatedStoreIdentifiers" : [938596958],
+  "appLaunchURL" : "http://www.jianshu.com",
+
+  "locations" : [
+    {
+      "longitude" : -122.3748889,
+      "latitude" : 37.6189722
+    },
+    {
+      "longitude" : -122.03118,
+      "latitude" : 37.33182
+    }
+  ],
+  "barcode" : {
+	"altText" : "订单号：123456",
+	"message" : "123456789",
+	"format" : "PKBarcodeFormatQR",
+	"messageEncoding" : "iso-8859-1"
+  },
+  "organizationName" : "Apple Inc.",
+  "description" : "大哥大",
+  "foregroundColor" : "rgb(255, 255, 255)",
+  "backgroundColor" : "rgb(60, 65, 76)",
+  "headerFields" : [
+    {
+      "key" : "filmName",
+      "label" : "影片",
+      "value" : "加勒比海盗akdsljfkdas",
+      "textAlignment" : "PKTextAlignmentNatural"
+    }
+  ],
+  "eventTicket" : {
+    "primaryFields" : [
+      {
+        "key" : "filmName",
+        "label" : "影片",
+        "value" : "test1111111",
+        "textAlignment" : "PKTextAlignmentNatural"
+      }
+    ],
+  "secondaryFields" : [
+      {
+        "key" : "orderNumber",
+        "label" : "订单号",
+        "value" : "test2",
+        "textAlignment" : "PKTextAlignmentLeft"
+      },
+      {
+        "key" : "verificationNumber",
+        "label" : "验证码",
+        "value" : "test222",
+        "textAlignment" : "PKTextAlignmentRight"
+      }
+    ],
+  "auxiliaryFields" : [
+	{
+	  "key" : "site",
+	  "label" : "影院",
+	  "value" : "test333",
+	  "textAlignment" : "PKTextAlignmentLeft"
+	},
+	{
+	  "key" : "order",
+	  "label" : "场次",
+	  "value" : "test3",
+	  "textAlignment" : "PKTextAlignmentCenter"
+	},
+	{
+	  "key" : "seat",
+	  "label" : "座位",
+	  "value" : "test333333",
+	  "textAlignment" : "PKTextAlignmentRight"
+	}
+  ],
+  "backFields" : [
+	   {
+		 "numberStyle" : "PKNumberStyleSpellOut",
+		 "label" : "spelled out",
+		 "key" : "numberStyle",
+		 "value" : 200
+	   },
+	   {
+		 "label" : "in Reals",
+		 "key" : "currency",
+		 "value" : 200,
+		 "currencyCode" : "BRL"
+	   },
+	   {
+		 "dateStyle" : "PKDateStyleFull",
+		 "label" : "full date",
+		 "key" : "dateFull",
+		 "value" : "1980-05-07T10:00-05:00"
+	   },
+	   {
+		 "label" : "full time",
+		 "key" : "timeFull",
+		 "value" : "1980-05-07T10:00-05:00",
+		 "timeStyle" : "PKDateStyleFull"
+	   },
+	   {
+		 "dateStyle" : "PKDateStyleShort",
+		 "label" : "short date and time",
+		 "key" : "dateTime",
+		 "value" : "1980-05-07T10:00-05:00"
+	   },
+	   {
+		 "dateStyle" : "PKDateStyleShort",
+		 "label" : "relative date",
+		 "key" : "relStyle",
+		 "value" : "2013-04-24T10:00-05:00",
+		 "isRelative" : true
+	   }
+	 ]
+
+  }
+}
