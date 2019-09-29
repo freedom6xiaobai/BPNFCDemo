@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D2BC6D3234069C60063F00C /* AAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D2BC6D2234069C60063F00C /* AAViewController.swift */; };
 		7DCC3C98233CA402004B4EAB /* signpass in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC3C8C233CA402004B4EAB /* signpass */; };
 		7DCC3C99233CA402004B4EAB /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC3C8E233CA402004B4EAB /* icon.png */; };
 		7DCC3C9A233CA402004B4EAB /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC3C8F233CA402004B4EAB /* thumbnail@2x.png */; };
@@ -20,7 +21,6 @@
 		7DCC3CA2233CA402004B4EAB /* Lollipop.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC3C97233CA402004B4EAB /* Lollipop.pkpass */; };
 		7DCC3CA5233CBC84004B4EAB /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DCC3CA4233CBC84004B4EAB /* PassKit.framework */; };
 		7DEE6FB3233C75E50065937B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6FB2233C75E50065937B /* AppDelegate.swift */; };
-		7DEE6FB5233C75E50065937B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6FB4233C75E50065937B /* SceneDelegate.swift */; };
 		7DEE6FB7233C75E50065937B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEE6FB6233C75E50065937B /* ViewController.swift */; };
 		7DEE6FBA233C75E50065937B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEE6FB8233C75E50065937B /* Main.storyboard */; };
 		7DEE6FBC233C75E70065937B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEE6FBB233C75E70065937B /* Assets.xcassets */; };
@@ -29,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D2BC6D2234069C60063F00C /* AAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAViewController.swift; sourceTree = "<group>"; };
 		7DCC3C8C233CA402004B4EAB /* signpass */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = signpass; sourceTree = "<group>"; };
 		7DCC3C8E233CA402004B4EAB /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		7DCC3C8F233CA402004B4EAB /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		7DCC3CA4233CBC84004B4EAB /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		7DEE6FAF233C75E50065937B /* BPNFCDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPNFCDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEE6FB2233C75E50065937B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7DEE6FB4233C75E50065937B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7DEE6FB6233C75E50065937B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7DEE6FB9233C75E50065937B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7DEE6FBB233C75E70065937B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,8 +115,8 @@
 				7DCC3C8B233CA402004B4EAB /* ReSource */,
 				7DEE6FC9233C77650065937B /* BPNFCDemo.entitlements */,
 				7DEE6FB2233C75E50065937B /* AppDelegate.swift */,
-				7DEE6FB4233C75E50065937B /* SceneDelegate.swift */,
 				7DEE6FB6233C75E50065937B /* ViewController.swift */,
+				7D2BC6D2234069C60063F00C /* AAViewController.swift */,
 				7DEE6FB8233C75E50065937B /* Main.storyboard */,
 				7DEE6FBB233C75E70065937B /* Assets.xcassets */,
 				7DEE6FBD233C75E70065937B /* LaunchScreen.storyboard */,
@@ -239,7 +239,7 @@
 			files = (
 				7DEE6FB7233C75E50065937B /* ViewController.swift in Sources */,
 				7DEE6FB3233C75E50065937B /* AppDelegate.swift in Sources */,
-				7DEE6FB5233C75E50065937B /* SceneDelegate.swift in Sources */,
+				7D2BC6D3234069C60063F00C /* AAViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
