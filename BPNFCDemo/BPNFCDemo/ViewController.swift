@@ -24,7 +24,7 @@ extension NFCTypeNameFormat: CustomStringConvertible{
 		   }
 	   }
 }
-@available(iOS 13.0, *)
+
 class ViewController: UIViewController,NFCNDEFReaderSessionDelegate,UITableViewDelegate,UITableViewDataSource{
 
 	@IBOutlet weak var tableView: UITableView!
@@ -79,6 +79,7 @@ class ViewController: UIViewController,NFCNDEFReaderSessionDelegate,UITableViewD
 
 
 	//MARK: - Call back 5、回调事件
+	@available(iOS 13.0, *)
 	func tagRemovalDetect(_ tag: NFCNDEFTag) {//轮询查标签id
 		session?.connect(to: tag) { (error: Error?) in
             if error != nil || !tag.isAvailable {
@@ -93,6 +94,7 @@ class ViewController: UIViewController,NFCNDEFReaderSessionDelegate,UITableViewD
     }
 
 	///MARK:创建nfc写入对象
+	@available(iOS 13.0, *)
     func createURLPayload() -> NFCNDEFPayload? {
 		var dateString: String?
 		var testString: String?
@@ -102,8 +104,9 @@ class ViewController: UIViewController,NFCNDEFReaderSessionDelegate,UITableViewD
 			 dateString = dateFormatter.string(from: NSDate.now)
 			 testString = self.inputText.text.description
 		 }
-		 var urlComponent = URLComponents(string: "https://www.lehe.com/")
-		urlComponent?.queryItems = [URLQueryItem(name: "date", value: dateString),URLQueryItem(name: "test", value: testString)]
+//		 var urlComponent = URLComponents(string: "higo://my_album.higo?json_params=%7b%7d")
+		var urlComponent = URLComponents(string: "higo://higo")
+//		urlComponent?.queryItems = [URLQueryItem(name: "date", value: dateString),URLQueryItem(name: "test", value: testString)]
         print("url: %@", (urlComponent?.string)!)
         return NFCNDEFPayload.wellKnownTypeURIPayload(url: (urlComponent?.url)!)
     }
@@ -143,42 +146,56 @@ class ViewController: UIViewController,NFCNDEFReaderSessionDelegate,UITableViewD
 
 	//点击查看
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		let message = self.dataArray[indexPath.row]
-		let payload = message.records.first!
+		let messages = self.dataArray[indexPath.row]
 		var title:String?
-		switch payload.typeNameFormat {
-		case .nfcWellKnown:
-			if  let type = String(data: payload.type, encoding: .utf8) {
-				if let url = payload.wellKnownTypeURIPayload() {
-					 title = "\(payload.typeNameFormat.description): \(type), \(url.absoluteString)"
-				}else{
-					var additionInfo: String? = ""
-				    (additionInfo, _) = payload.wellKnownTypeTextPayload()
-					title = "\(payload.typeNameFormat.description): \(type),\(additionInfo!)"
+		let payload = messages.records.first!
+		if  #available(iOS 13.0, *) {
+			switch payload.typeNameFormat {
+			case .nfcWellKnown:
+				if  let type = String(data: payload.type, encoding: .utf8) {
+					if let url = payload.wellKnownTypeURIPayload() {
+						title = "\(payload.typeNameFormat.description):\(type),\(url.absoluteString)"
+					}else{
+						var additionInfo: String? = ""
+						(additionInfo, _) = payload.wellKnownTypeTextPayload()
+						title = "\(payload.typeNameFormat.description):\(type),\(additionInfo!)"
+					}
 				}
+				break
+			case .absoluteURI:
+				if let text = String(data: payload.payload, encoding: .utf8) {
+					title = text
+				}
+				break
+			case .media:
+				if let type = String(data: payload.type, encoding: .utf8) {
+					title = type
+				}
+				break
+			case.nfcExternal,.empty,.unknown,.unchanged:
+				title = "..."
+				break
+			@unknown default:
+				title = payload.typeNameFormat.description
+				break
 			}
-			break
-		case .absoluteURI:
-			if let text = String(data: payload.payload, encoding: .utf8) {
-				title = text
-			}
-			break
-		case .media:
-			if let type = String(data: payload.type, encoding: .utf8) {
-				title = type
-			}
-			break
-		case.nfcExternal,.empty,.unknown,.unchanged:
-			title = "..."
-			break
-		@unknown default:
-			title = payload.typeNameFormat.description
-			break
+			title = title!.components(separatedBy: ",").last!
+		}else{
+			title = String.init(data: payload.payload.advanced(by: 1), encoding: .utf8)! // 1 奇葩问题
 		}
 
-
 		let alertVC = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.alert)
-		alertVC.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+		alertVC.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { (action) in
+
+			guard let settingsUrl = URL(string: "higo://") else {
+				return
+			}
+			if UIApplication.shared.canOpenURL(settingsUrl) {
+				UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+					print("Settings opened: \(success)") // Prints true
+				})
+			}
+		}))
 		self.present(alertVC, animated: true, completion: nil)
 
 	}
@@ -203,6 +220,8 @@ class ViewController: UIViewController,NFCNDEFReaderSessionDelegate,UITableViewD
 			self.dataArray.append(contentsOf: messages)
 			self.tableView .reloadData()
 		}
+		session.alertMessage = "Found 1 NDEF message"
+		session.invalidate()
 	}
 
 	//新方法
@@ -274,6 +293,7 @@ class ViewController: UIViewController,NFCNDEFReaderSessionDelegate,UITableViewD
 		}
 	}
 
+	@available(iOS 13.0, *)
 	func readerSessionDidBecomeActive(_ session: NFCNDEFReaderSession) {
 		if self.isWrite {
 			print("初始化写入数据")
